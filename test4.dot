@@ -1,0 +1,9 @@
+digraph G4 {
+	edge [style="bold"];
+	A
+	B
+	C
+
+	A->C [label="A2C" fontcolor="green" arrowhead="diamond"]
+	B->C [style="bold,dashed" color="red" arrowsize="2.0"]
+}

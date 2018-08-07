@@ -1,0 +1,58 @@
+digraph MerkleTree {
+	rankdir = BT;
+	label="MerkleTree draw by huangjian";
+
+	node [fontname="Microsoft YaHei" fontsize=15 shape="record" color="black" fillcolor="gray90" style="filled,bold"];
+	edge [style="bold"];
+
+	HA [label=<H<SUB>A</SUB>>];
+	HB [label=<H<SUB>B</SUB>>];
+	HAB [label=<H<SUB>AB</SUB>>];
+	HC [label=<H<SUB>C</SUB>>];
+	HD [label=<H<SUB>D</SUB>>];
+	HCD [label=<H<SUB>CD</SUB>>];
+	HABCD [label=<H<SUB>ABCD</SUB>>];
+	HE [label=<H<SUB>E</SUB>>];
+	HF [label=<H<SUB>F</SUB>>];
+	HEF [label=<H<SUB>EF</SUB>>];
+	HG [label=<H<SUB>G</SUB>>];
+	HH [label=<H<SUB>H</SUB>>];
+	HGH [label=<H<SUB>GH</SUB>>];
+	HEFGH [label=<H<SUB>EFGH</SUB>>];
+	HABCDEFGH [label=<H<SUB>ABCDEFGH</SUB>> fillcolor="red" fontcolor="white" style="filled,bold"];
+
+	HI          [label=<H<SUB>I</SUB>>];
+	HJ          [label=<H<SUB>J</SUB>>];
+	HIJ         [label=<H<SUB>IJ</SUB>> fillcolor="red" fontcolor="white"];
+	HK          [label=<H<SUB>K</SUB>> fillcolor="forestgreen" fontcolor="white"];
+	HL          [label=<H<SUB>L</SUB>> fillcolor="red" fontcolor="white"];
+	HKL         [label=<H<SUB>KL</SUB>> color="red" style="filled,bold,dashed"];
+	HIJKL       [label=<H<SUB>IJKL</SUB>> color="red" style="filled,bold,dashed"];
+	HM          [label=<H<SUB>M</SUB>>];
+	HN          [label=<H<SUB>N</SUB>>];
+	HMN         [label=<H<SUB>MN</SUB>>];
+	HO          [label=<H<SUB>O</SUB>>];
+	HP          [label=<H<SUB>P</SUB>>];
+	HOP         [label=<H<SUB>OP</SUB>>];
+	HMNOP       [label=<H<SUB>MNOP</SUB>> fillcolor="red" fontcolor="white"];
+	HIJKLMNOP   [label=<H<SUB>IJKLMNOP</SUB>> color="red" style="filled,bold,dashed"];
+
+	{HA,HB} -> HAB
+	{HC,HD} -> HCD
+	{HAB,HCD} -> HABCD
+	{HE,HF} -> HEF
+	{HG,HH} -> HGH
+	{HEF,HGH} -> HEFGH
+	{HABCD,HEFGH} -> HABCDEFGH
+
+	{HI,HJ}    -> HIJ 
+	{HK,HL}    -> HKL
+	{HIJ,HKL}   -> HIJKL
+	{HM,HN}    -> HMN
+	{HO,HP}    -> HOP
+	{HMN,HOP}   -> HMNOP
+	{HIJKL,HMNOP} -> HIJKLMNOP
+
+	HABCDEFGHIJKLMNOP [label=<Root<br/><SUB>ABCDEFGHIJKLMNOP</SUB>> color="red" style="filled,bold,dashed"]
+	{HABCDEFGH,HIJKLMNOP} -> HABCDEFGHIJKLMNOP
+}

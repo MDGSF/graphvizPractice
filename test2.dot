@@ -1,0 +1,7 @@
+digraph G2 {
+	node [fontname="Microsoft YaHei" fontsize=15 shape="record" color="black" fillcolor="gray90" style="filled,bold"]
+
+	HA [label=<H<SUB>A</SUB>>]
+	HK [label=<H<SUB>K</SUB>> fillcolor="forestgreen" fontcolor="white"]
+	HKL [label=<H<SUB>KL</SUB>> color="dodgerblue3" style="filled,bold,dashed"]
+}
